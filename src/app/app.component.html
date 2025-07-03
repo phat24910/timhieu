@@ -7,7 +7,7 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
+<!-- <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -322,7 +322,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -333,4 +333,65 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
+<app-profile-photo></app-profile-photo>
+
+<!-- app.component.html -->
+<h2>Đây là App Component</h2>
+<app-hello></app-hello>
+
+<!--data binding-->
+<!--Event binding-->
+{{name}}
+
+<p>{{user.name}}</p>
+<p>{{user.age}}</p>
+
+<input type ="text" [value]="user.name">
+
+<button type="button" (click)="handler($event)">Click</button>
+<br><br>
+<input type="text" [(ngModel)]="name" (ngModelChange)="name=$event"/>
+
+<!--ngIf-->
+<!-- <app-hello *ngIf="user.age>=18" [name]="user.name"></app-hello>
+<div *ngIf="user.age < 18">
+  ko du tuoi
+</div>
+<button (click)="user.age=user.age+1">Tang tuoi</button>
+Age: {{user.age}}
+<button (click)="user.age=user.age-1">Giam tuoi</button> -->
+
+<!-- <div *ngFor="let author of authors">
+  {{author.id}} - {{author.firstName}} {{author.lastName}}
+</div> -->
+
+<!-- <app-user-profile [name]="user.name"></app-user-profile> -->
+<br>
+<button (click)="show = !show">Toggle User Profile</button>
+<app-user-profile *ngIf="show"></app-user-profile>
+
+<br>
+<app-author-list></app-author-list>
+
+<br>
+<app-example-container></app-example-container>
+
+<br>
+<button (click)="currentProgress = currentProgress + 10">Increase Progress</button>
+<button (click)="currentProgress = currentProgress - 10">Decrease Progress</button>
+
+<br>
+<app-progress-bar></app-progress-bar>
+
+<br>
+<app-progress-bar
+  [progress]="currentProgress"
+  [backgroundColor]="'#ccc'"
+  [progressColor]="'blue'"
+></app-progress-bar>
+
+
 <router-outlet />
+
+
+
