@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input, SimpleChanges} from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
@@ -33,6 +33,7 @@ export class ProgressBarComponent implements OnInit, OnChanges {
   @Input() backgroundColor: string = '#ccc';
   @Input() progressColor: string = 'tomato';
   @Input() progress = 10;
+  @Output() completed = new EventEmitter<void>();
 
   constructor() {}
 
@@ -45,6 +46,9 @@ export class ProgressBarComponent implements OnInit, OnChanges {
         } else {
           this.progress = progress;
         }
+      }
+      if (this.progress >= 100) {
+        this.completed.emit();
       }
     }
   }

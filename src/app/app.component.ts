@@ -23,4 +23,10 @@ export class AppComponent {
   handler(event: any){
     console.log('click', event);
   }
+
+  message = '';
+  handlerCompleted() {
+    this.message = 'Progress đã đạt 100%';
+  }
+
 }

@@ -388,8 +388,9 @@ Age: {{user.age}}
   [progress]="currentProgress"
   [backgroundColor]="'#ccc'"
   [progressColor]="'blue'"
+  (completed)="handlerCompleted()"
 ></app-progress-bar>
-
+<div *ngIf="message" style="color: green; font-weight: bold;">{{ message }}</div>
 
 <router-outlet />
 
