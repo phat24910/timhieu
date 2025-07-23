@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-profile-photo',
@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
   styles: [`
     img {
       border-radius: 50%;
-      encapsulation: ViewEncapsulation.None;
+      encapsulation: ViewEncapsulation.None
     }
-  `]
+  `],
 })
 export class ProfilePhotoComponent { }

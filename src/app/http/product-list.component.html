@@ -1,0 +1,6 @@
+<h2>Danh sách sản phẩm</h2>
+<ul>
+  <li *ngFor="let p of products">
+    <strong>{{p.name}}</strong> – {{p.price | currency}}
+  </li>
+</ul>

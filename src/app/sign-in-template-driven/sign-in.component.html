@@ -1,0 +1,66 @@
+<a routerLink="/article" mat-button style="margin-top: 1rem;">→ Vào trang chủ (bỏ qua đăng nhập)</a>
+
+<div class="container">
+  <form class="sign-in-form" novalidate #signInForm="ngForm" (submit)="onSubmit(signInForm)" autocomplete="off">
+    <h2>Sign in</h2>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Username"
+          required
+          minlength="6"
+          maxlength="32"
+          [pattern]="usernamePattern"
+          #username="ngModel"
+          [(ngModel)]="userInfo.userName"
+          name="username">
+        <mat-error *ngIf="username.touched && !username.valid">
+          <span *ngIf="username.errors?.['required']">Tên người dùng là bắt buộc</span>
+          <span *ngIf="username.errors?.['minlength'] || username.errors?.['maxlength']">
+            Độ dài từ 6 đến 32 ký tự
+          </span>
+          <span *ngIf="!(username.errors?.['minlength'] || username.errors?.['maxlength']) && username.errors?.['pattern']">
+            Chỉ dùng chữ cái
+          </span>
+        </mat-error>
+
+      </mat-form-field>
+    </div>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          required
+          minlength="6"
+          maxlength="32"
+          [pattern]="passwordPattern"
+          #password="ngModel"
+          [(ngModel)]="userInfo.password"
+          name="password">
+        <mat-error *ngIf="password.touched && !password.valid">
+          <span *ngIf="password.errors?.['required']">Mật khẩu là bắt buộc</span>
+          <span *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">Độ dài từ 6 đến 32 ký tự</span>
+          <span *ngIf="!(password.errors?.['minlength'] || password.errors?.['maxlength']) && password.errors?.['pattern']">
+            Chỉ có chữ cái, chữ số và ít nhất một trong số !&64#$%^&*
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="row-control">
+      <mat-checkbox [(ngModel)]="userInfo.rememberMe" name="rememberMe">Remember me</mat-checkbox>
+    </div>
+    <div class="row-control row-actions">
+      <button mat-raised-button color="primary" type="submit">Sign in</button>
+    </div>
+
+    <pre>{{ signInForm.value | json }}</pre>
+    <!-- <pre>{{ userInfo | json }}</pre> -->
+  </form>
+</div>
+

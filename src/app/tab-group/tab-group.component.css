@@ -1,0 +1,15 @@
+.tab-headers {
+  display: flex;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-item-headers {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.tab-item-headers.active {
+  border-radius: 1px solid orange;
+}

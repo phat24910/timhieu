@@ -1,0 +1,29 @@
+p {
+  font-family:'Times New Roman', Times, serif
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  padding: auto;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+.orange-border {
+  border-color:orange;
+}
+
+.green-background {
+  background-color: green;
+}
+
+.link-group {
+  display: flex;
+  gap: 20px;
+}
+
+.link-group a {
+  text-decoration: underline;
+  color: rgb(17, 164, 232);
+}

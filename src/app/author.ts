@@ -3,6 +3,7 @@ export interface Author {
   firstName: string;
   lastName: string;
   email: string;
+  phone?: string;
   gender: string;
   ipAddress: string;
 }
@@ -13,6 +14,7 @@ export const authors: Author[] = [
     firstName: 'John',
     lastName: 'Doe',
     email: 'john@example.com',
+    phone: '123 4567890',
     gender: 'male',
     ipAddress: '192.168.1.1'
   },
@@ -21,6 +23,7 @@ export const authors: Author[] = [
     firstName: 'Jane',
     lastName: 'Smith',
     email: 'jane@example.com',
+    phone: '987 654 3210',
     gender: 'female',
     ipAddress: '192.168.1.2'
   },
@@ -29,6 +32,7 @@ export const authors: Author[] = [
     firstName: 'Alice',
     lastName: 'Johnson',
     email: 'alice@example.com',
+    phone: '555 123 4567',
     gender: 'female',
     ipAddress: '192.168.1.3'
   },
@@ -37,6 +41,7 @@ export const authors: Author[] = [
     firstName: 'Bob',
     lastName: 'Brown',
     email: 'bob@example.com',
+    phone: '555 987 6543',
     gender: 'male',
     ipAddress: '192.168.1.4'
   },
@@ -45,6 +50,7 @@ export const authors: Author[] = [
     firstName: 'Charlie',
     lastName: 'Davis',
     email: 'charlie@example.com',
+    phone: '555 555 5555',
     gender: 'male',
     ipAddress: '192.168.1.5'
   }
